@@ -1,3 +1,5 @@
+//Класс Order
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -15,14 +17,14 @@ public class Order {
         return "Покупатель: " + customer + " Корзина: " + Arrays.toString(basket);
     }
 
-   @Override
+    @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) {
-          return false;
-      }
-       Order order = (Order) o;
-       return arraysEqual(basket, order.basket);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Order order = (Order) o;
+        return Objects.equals(customer, order.customer) && arraysEqual(basket, order.basket);
     }
 
     private boolean arraysEqual(Product[] product1, Product[] product2) {
@@ -41,6 +43,6 @@ public class Order {
                 break;
             }
         }
-         return arrEqual;
+        return arrEqual;
     }
 }

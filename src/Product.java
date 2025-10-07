@@ -1,3 +1,4 @@
+//Класс Product
 import java.util.Objects;
 
 public class Product {
